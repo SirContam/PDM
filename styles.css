@@ -1,0 +1,221 @@
+/* All of this CSS is changeable to match it with your website, just change the colors the positioning, etc */
+
+/* Core Stylings (don't really matter, just a CSS reset) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ol, ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* Utility Classes (must-have) */
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+/* Dropdown Menu Styling */
+/* Button */
+.btn {
+  display: inline-block;
+  /* Change the background color of the button that triggers the dropdown menu to appear */
+  background-color: #28a745;
+  /* Change the padding of the button that triggers the dropdown menu to appear */
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border: none;
+  /* Change the font color of the button that triggers the dropdown menu to appear */
+  color: #fff;
+  /* Change the strength of the rounded borders, if any.
+      none: "border-radius: 0px" or take it out
+      little: "border-radius: 5px"
+      complete circle: "border-radius: 50%"
+      and you can do anything inbetween */
+  border-radius: 5px;
+}
+/* Change the result of hovering on the button */
+.btn:hover {
+  opacity: 0.9;
+}
+/* Dropdown Menu */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+ /* Change the background color for the dropdown menu */
+  background: #1bc2a2;
+}
+ul li {
+  display: block;
+  position: relative;
+  float: left;
+ /* Change the background color for the first-level li's (list items) */
+  background: #1bc2a2;
+  cursor: pointer;
+}
+.dropdown-submenu {
+  display: none;
+  z-index: 1;
+}
+ul li a {
+  display: block;
+  /* Change the padding that each of the li's (list items) have */
+  padding: 1em 2em;
+  text-decoration: none;
+  white-space: nowrap;
+  /* Change the font color of each of the li's (list items) */
+  color: #fff;
+}
+ul li a:hover {
+  /* Change the background color of the li's (list items) on hover */
+  background: #2c3e50;
+}
+li:hover > ul {
+  display: block;
+  position: absolute;
+}
+li:hover li {
+  float: none;
+}
+li:hover a {
+  /* Change the background color of the previous li when a new li is hovered */
+  background: #1bc2a2;
+}
+li:hover li a:hover {
+  /* Change the background color of the new li when a new li is hovered */
+  background: #2c3e50;
+}
+.main-navigation li ul li {
+  border-top: 0;
+}
+ul:before, ul:after {
+  content: " ";
+ /* 1 */
+  display: table;
+ /* 2 */
+}
+ul:after {
+  clear: both;
+}
+/* Opacity on the click of car name (for box) */
+.overlay {
+  /* Change the size of the overlay (right now it's set to the whole screen on every device) */
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  /* Change the position of the overlay (it's set to the top left corner right now) */
+  top: 0;
+  left: 0;
+  /* Change how dark the overlay is by modifying the last value on a (0-1) basis */
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 9998;
+}
+/* Box */
+.overlay-box {
+  /* Change the height and the width of the box in the middle using these values. Media queries could be used to make it look better on different screens. */
+  height: 75vh;
+  width: 27vw;
+  position: absolute;
+  /* Change the centering of the box in them middle using these values. Media queries could also be used here if needed. */
+  top: 13vh;
+  left: 36vw;
+  /* Change the background color of the box */
+  background: white;
+  /* Change the strength of the rounded borders, if any.
+      none: "border-radius: 0px" or take it out
+      little: "border-radius: 5px"
+      complete circle: "border-radius: 50%"
+      and you can do anything inbetween */
+  border-radius: 5px;
+  /* Change the strength of the box-shadow by modifying these values */
+  box-shadow: 0px 3px 14px 2px rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+}
+.overlay-box .container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.overlay-box .container .img-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Change where the img is aligned in the img-container
+      flex-start: the top of the first half
+      center: the middle of the first half
+      flex-end: the bottom of the first half */
+  justify-content: center;
+  align-items: center;
+}
+.overlay-box .container .img-container .car-img {
+  /* Change the size of the image (right now it's set to fill the entire div) */
+  max-width: 100%;
+  max-height: 100%;
+}
+.overlay-box .container .text-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.overlay-box .container .text-container .car-name-label, .overlay-box .container .text-container .car-price-label {
+  /* Change the color of the labels that go before the JSON values in the overlay box */
+  color: #d4d4d4;
+  /* Change the margin of the labels that go before the JSON values in the overlay box */
+  margin: 0 2rem;
+}
+.overlay-box .container .text-container .car-name {
+  /* Change the margin of the individual JSON value for the car-name */
+  margin: 1rem 2rem;
+  /* Change the font size of the JSON value */
+  font-size: 1.4rem;
+}
+.overlay-box .container .text-container .car-price {
+  /* Change the margin of the individual JSON value for the car-price */
+  margin: 1rem 2rem;
+  /* Change the font size of the JSON value */
+  font-size: 1.4rem;
+}
+.overlay-box .container .text-container .btn {
+  /* Change the margin of the button on the bottom of the box-overlay */
+  margin: 1rem 2rem;
+  /* Change the location for the botton
+      Beginning: flex-start
+      Middle: center
+      End: flex-end */
+  align-self: center;
+  /* Change the color of the button */
+  color: #28a745;
+  /* Change the background color of the button */
+  background-color: white;
+  /* Change the border and the border color of the button */
+  border: 1px solid #28a745;
+  /* Change the curved border radiuses of the button */
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  text-align: center;
+  /* Change the transition time and the function */
+  transition: 0.3s all ease-in;
+}
+.overlay-box .container .text-container .btn:hover {
+  /* Change the background of the button at the bottom of the overlay box on hover */
+  background-color: black;
+  /* Change the color of the button on hover */
+  color: #D758BA;
+  /* Change the border and the border color of the button on hover */
+  border: 1px solid #D758BA;
+}
